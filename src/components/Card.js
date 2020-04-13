@@ -1,16 +1,22 @@
 import React from 'react';
 
 const Card = ({character}) => {
-  const {name} = character;
-  // esto no funciona es una mentira (?)
-  // const portrait = thumbnail.path
+  const { thumbnail, name, description } = character;
+  const bgImg = `${thumbnail && thumbnail.path}/portrait_uncanny.jpg`;
+
+  var cardBackground = {
+    backgroundImage: "url(" + bgImg + ")"
+  }
 
   return (
-    <div className="card">
+    <div className="card" style={cardBackground}>
       <div className="name">
         <h3>
           {name}
         </h3>
+        {/* <p>
+          {description}
+        </p> */}
       </div>
     </div>
   );
